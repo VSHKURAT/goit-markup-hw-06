@@ -544,12 +544,6 @@ img {
 
 .subscribe-button {
   display: flex;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-
   color: #ffffff;
   background-color: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -564,6 +558,27 @@ img {
 .subscribe-icon {
   fill: #fff;
   margin-left: 10px;
+}
+
+.footer-form {
+  display: flex;
+}
+
+.footer-form-text {
+  display: block;
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding: 16px 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 /* portfolio */
@@ -706,8 +721,9 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   animation-name: backgroundmodal;
-  animation-duration: 3000ms;
+  animation-duration: 1000ms;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px;
 }
 
 .backdrop.is-hidden .modal {
@@ -728,12 +744,158 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button:hover {
+  fill: var(--hover-color);
 }
 
 .is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--secondary-text-color);
+  margin-bottom: 12px;
+}
+
+.modal-text {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+  margin-bottom: 4px;
+}
+
+.form-wrap {
+  position: relative;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.modal-form {
+  width: 100%;
+  height: 100%;
+  padding: 12px 12px 12px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.modal-form:hover {
+  border-color: var(--hover-color);
+  cursor: pointer;
+}
+
+.modal-form:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+  border: 1px solid #2196f3;
+}
+
+.modal-form:hover + .form-icon,
+.modal-form:focus + .form-icon {
+  fill: var(--hover-color);
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+}
+
+.modal-comment {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+.modal-comment:hover {
+  border-color: var(--hover-color);
+  cursor: pointer;
+}
+
+.modal-comment:focus {
+  border-color: var(--hover-color);
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.modal-comment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.policy {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.policy-text {
+  display: flex;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--primary-text-color);
+  align-items: center;
+}
+
+.check-span {
+  display: flex;
+  width: 16px;
+  height: 15px;
+  border: 2px solid rgba(33, 33, 33, 1);
+  border-radius: 2px;
+  margin-right: 8px;
+  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.check-icon {
+  fill: transparent;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:checked + .policy-text > .check-span {
+  background-color: var(--hover-color);
+  border-radius: 2px;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.checkbox:checked + .policy-text > .check-span > .check-icon {
+  fill: #fff;
+}
+
+.policy-agreement {
+  display: block;
+  margin-left: 1px;
+  text-decoration: underline;
+  color: var(--hover-color);
 }
 
 @keyframes backgroundmodal {
